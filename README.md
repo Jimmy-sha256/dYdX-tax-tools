@@ -246,6 +246,10 @@ The csv_date_filter.py script allows you to slice the processed csv files genera
 
 * **Run The Script**
 
+```bash
+python filter_csv_files.py
+```
+
 When prompted, enter the folder path where your CSV files are stored.
 
 ```python
