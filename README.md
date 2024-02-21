@@ -61,7 +61,7 @@ To use the dydx_data_processing.py script, follow these steps:
 
 * **Place Original Files**
 
-Ensure that your original CSV files are located in the `Original_Files` directory. Rename them `Funding.csv`, `Trades.csv`, `Transfers.csv`.
+Ensure that your original CSV files are located in the `Original_Files` directory. Rename them `Funding.csv`, `Trades.csv`, `Transfers.csv`. Replace the example files currently in the` Original_Files` with the files you want to process. 
 
 
 ```bash
@@ -205,7 +205,7 @@ processed_trades.save_data(processed_trades.trade_data, "Trade_Data")
 processed_trades.save_data(processed_trades.buy_side_data, "Buy_Side_Data")
 processed_trades.save_data(processed_trades.sell_side_data, "Sell_Side_Data")
 ```
-This saves the data into folders named Trade_Data, Buy_Side_Data, and Sell_Side_Data, respectively.
+This saves the data into folders named Trade_Data, Buy_Side_Data, and Sell_Side_Data, respectively. These files are not for uploading to koinly but are usefull for checking for errors. 
 
 
 ```bash

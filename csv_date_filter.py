@@ -5,8 +5,10 @@ from collections import Counter
 def filter_csv_files(folder_path, start_date, end_date):
     # Create a directory to save filtered files
     folder_name = os.path.basename(folder_path)  # Extract the folder name from the folder path
+
     # Generate a name for the output directory based on folder name, start date, and end date
     output_dir = f"{folder_name}_{start_date.strftime('%Y-%m-%d')}_{end_date.strftime('%Y-%m-%d')}" 
+
     # Create the output directory if it doesn't exist
     os.makedirs(output_dir, exist_ok=True)  
 
@@ -70,8 +72,10 @@ def filter_csv_files(folder_path, start_date, end_date):
                     ]
 
                     if not filtered_df.empty:
+
                         # Check if the first row has NaN values for every column except 'Block'
                         if filtered_df.iloc[0].drop("Block").isnull().all():
+
                             # Drop the first row if all values except 'Block' are NaN
                             filtered_df = filtered_df.iloc[1:]
 
@@ -85,6 +89,7 @@ def filter_csv_files(folder_path, start_date, end_date):
                 print(f"No data found between {start_date} and {end_date} in {filename}")
 
 if __name__ == "__main__":
+
     # Get input folder path and date range from user
     folder_path = input("Enter the folder path containing CSV files: ")
     start_date = pd.to_datetime(input("Enter the start date (YYYY-MM-DD): "))
