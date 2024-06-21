@@ -124,7 +124,7 @@ class ProcessedTrades:
 
         # Assign labels based on 'Amount' values
         df["Label"] = df["Amount"].apply(
-            lambda x: "Margin Fee" if x < 0 else "Interest Earned"
+            lambda x: "Margin Fee" if x < 0 else "Lending Interest"
         )
 
         # Assign fixed currency and description
